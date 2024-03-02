@@ -1,19 +1,16 @@
+import Logo from '../../components/logo/logo';
 import PlaceCard from '../../components/place-card/place-card';
 type MainScreenType = {
   placeCountCard: number;
 }
 
-function MainScreen({placeCountCard}: MainScreenType):JSX.Element{
+function MainScreen({ placeCountCard }: MainScreenType): JSX.Element {
   return (
     <div className="page page--gray page--main">
       <header className="header">
         <div className="container">
           <div className="header__wrapper">
-            <div className="header__left">
-              <a className="header__logo-link header__logo-link--active">
-                <img className="header__logo" src="img/logo.svg" alt="6 cities logo" width={81} height={41} />
-              </a>
-            </div>
+            <Logo />
             <nav className="header__nav">
               <ul className="header__nav-list">
                 <li className="header__nav-item user">
@@ -80,7 +77,7 @@ function MainScreen({placeCountCard}: MainScreenType):JSX.Element{
               <form className="places__sorting" action="#" method="get">
                 <span className="places__sorting-caption">Sort by</span>
                 <span className="places__sorting-type" tabIndex={0}>
-                        Popular
+                  Popular
                   <svg className="places__sorting-arrow" width={7} height={4}>
                     <use xlinkHref="#icon-arrow-select" />
                   </svg>
@@ -94,7 +91,7 @@ function MainScreen({placeCountCard}: MainScreenType):JSX.Element{
               </form>
               <div className="cities__places-list places__list tabs__content">
                 {
-                  Array.from({length: placeCountCard}, (_, index) => <PlaceCard key = {index} />)
+                  Array.from({ length: placeCountCard }, (_, index) => <PlaceCard key={index} />)
                 }
               </div>
             </section>
@@ -108,5 +105,5 @@ function MainScreen({placeCountCard}: MainScreenType):JSX.Element{
   );
 }
 
-export default MainScreen ;
+export default MainScreen;
 
